@@ -4,7 +4,7 @@ NCORE=8
 inv_warp=`jq -r '.inv_warp' config.json`
 track=`jq -r '.track' config.json`
 
-[ ! -d track ] && mkdir track
+[ ! -d track ] && mkdir track && outdir='./track'
 
 [ ! -f x.nii.gz ] && mrconvert ${inv_warp} tmp-[].nii.gz -force -nthreads $NCORE && mv tmp-0.nii.gz x.nii.gz && mrcalc x.nii.gz -neg tmp-0.nii.gz -force -nthreads $NCORE
 
