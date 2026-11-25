@@ -10,7 +10,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-lightgrey.svg" alt="MIT license"></a>
 </p>
 
-## 🧠 At a glance
+## At a glance
 
 <!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
 
@@ -20,20 +20,20 @@ Converts the inverse displacement warp of the transform input into an MRtrix3 de
 
 | | |
 |---|---|
-| 📥 **Inputs** | `neuro/transform/nifti` · `neuro/track/tck` |
-| 📤 **Outputs** | `neuro/track/tck` |
-| 🐳 **Container** | `brainlife/mrtrix3:3.0.3` |
-| ⚙️ **Resources** | 8 CPUs · 20 GB memory · 0.5 h walltime |
-| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.721](https://doi.org/10.25663/brainlife.app.721) |
+| **Inputs** | `neuro/transform/nifti` · `neuro/track/tck` |
+| **Outputs** | `neuro/track/tck` |
+| **Container** | `brainlife/mrtrix3:3.0.3` |
+| **Resources** | 8 CPUs · 20 GB memory · 0.5 h walltime |
+| **Run it** | [doi.org/10.25663/brainlife.app.721](https://doi.org/10.25663/brainlife.app.721) |
 
-#### 📥 Inputs
+#### Inputs
 
 | Input | Datatype | Required | Description |
 |---|---|---|---|
 | `transform` | `neuro/transform/nifti` | yes | Nonlinear transform to MNI space; its inverse warp (inv_warp) is used to move streamlines. |
 | `track` | `neuro/track/tck` | yes | Tractogram in subject space to be warped. |
 
-#### 📤 Outputs
+#### Outputs
 
 | Output | Datatype | Description |
 |---|---|---|
@@ -41,9 +41,9 @@ Converts the inverse displacement warp of the transform input into an MRtrix3 de
 
 <!-- brainlife-app:end -->
 
-## 🚀 Running the App
+## Running the App
 
-### ☁️ On brainlife.io
+### On brainlife.io
 
 Open the App at [doi.org/10.25663/brainlife.app.721](https://doi.org/10.25663/brainlife.app.721), choose a `neuro/track/tck` tractogram in subject space and a `neuro/transform/nifti` dataset holding the nonlinear transform between that space and MNI, and press **Execute**. The App:
 
@@ -52,7 +52,7 @@ Open the App at [doi.org/10.25663/brainlife.app.721](https://doi.org/10.25663/br
 
 The result is a `neuro/track/tck` dataset tagged `mni_space`. Use it to bring subject tractograms into template space for group visualisation or atlas-based analysis.
 
-### 💻 Locally
+### Locally
 
 You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqlang.github.io/jq/). MRtrix3 3.0.3 runs inside the container.
 
@@ -72,18 +72,18 @@ You need [Singularity/Apptainer](https://apptainer.org/) and [`jq`](https://jqla
    ./main
    ```
 
-## 📦 Outputs
+## Outputs
 
 ```text
 track/
 └── track.tck   the tractogram in MNI space
 ```
 
-## 🩺 Troubleshooting
+## Troubleshooting
 
 - **`something went wrong. check logs and derivatives`**: `track/track.tck` was not produced. Check that the transform input contains an inverse warp matching the tractogram's space.
 
-## 📚 Citing
+## Citing
 
 > [!TIP]
 > If you use this App in your work, please cite the App, the software it builds on and brainlife.io (below). GitHub's **Cite this repository** button gives the App citation in APA and BibTeX.
@@ -93,11 +93,11 @@ track/
 - Hayashi S, Caron BA, Heinsfeld AS, et al. brainlife.io: a decentralized and open-source cloud platform to support neuroscience research. *Nature Methods* 21:809–813 (2024). [doi:10.1038/s41592-024-02237-2](https://doi.org/10.1038/s41592-024-02237-2)
 - Avesani P, McPherson B, Hayashi S, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. *Scientific Data* 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
 
-## 👥 Authors
+## Authors
 
 - Brad Caron
 
-## 💰 Funding
+## Funding
 
 [![Wellcome-226486/Z/22/Z](https://img.shields.io/badge/Wellcome-226486%2FZ%2F22%2FZ-purple.svg)](https://wellcome.org/)
 [![NIH-NINDS-U24NS140384](https://img.shields.io/badge/NIH_NINDS-U24NS140384-green.svg)](https://reporter.nih.gov/project-details/11261037)
@@ -116,6 +116,6 @@ track/
 
 <sub>brainlife.io is publicly funded, and acknowledging that support helps keep it running. This App was developed with support from Wellcome, the U.S. National Institutes of Health (including the BRAIN Initiative BRAIN CONNECTS program: The Axonal Projectome EXchange, U24NS140384, and the Center for Mesoscale Connectomics, UM1NS132207) and the U.S. National Science Foundation.</sub>
 
-## ⚖️ License
+## License
 
 [MIT](LICENSE). MRtrix3 itself is distributed under its own [license](https://www.mrtrix.org/).
